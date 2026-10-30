@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: chatapp-ingress
+  name: chat-app-ingress
   namespace: chat-app
   labels:
-    name: chatapp-ingress
+    app: chat-app-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: chat-tws.com
+  - host: rld-chat.com
     http:
       paths:
       - pathType: Prefix

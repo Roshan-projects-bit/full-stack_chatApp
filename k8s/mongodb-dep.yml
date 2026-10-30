@@ -7,17 +7,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongodb
+      app: mongo
   template:
     metadata:
       name: mongodb-pod
       namespace: chat-app
-      labels: 
-        app: mongodb
+      labels:
+        app: mongo
     spec:
       containers:
-      - name: chatapp-mongodb
-        image: mongo:latest
+      - name: chat-app-mongodb
+        image: mongo
         ports:
         - containerPort: 27017
         env:
@@ -28,7 +28,6 @@ spec:
       volumes:
       - name: mongo-data
         persistentVolumeClaim:
-          claimName: mongodb-pvc   
-
+          claimName: mongodb-pvc
 
 
